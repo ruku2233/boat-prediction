@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO対策用メタタグ -->
+    <title>無料競艇予想 & AIレース解析ナビ</title>
+    <meta name="description" content="本日の競艇予想、全国24場の出走表、レース結果、払戻金をリアルタイムで確認できる自動更新予想ポータルサイトです。">
+    <meta property="og:title" content="無料競艇予想 & AIレース解析ナビ">
+    <meta property="og:description" content="本日開催の競艇予想・結果・払戻金一覧">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>BOAT PREDICTION NAVI</h1>
+        <p>全国競艇場 出走表・AI予想・レース結果</p>
+    </header>
+
+    <main class="container">
+        <!-- サマリーバー -->
+        <section class="info-bar">
+            <div>日付: <span id="current-date">----年--月--日</span></div>
+            <div>本日の的中率: <span id="hit-rate">--%</span></div>
+            <div>回収率: <span id="recovery-rate">--%</span></div>
+            <button id="open-directory-btn" class="btn-sub">簡易選手名鑑</button>
+        </section>
+
+        <!-- 競艇場選択タブ -->
+        <div id="venue-tabs" class="venue-tabs"></div>
+
+        <!-- レース一覧コンテナ -->
+        <section id="race-container" class="race-grid"></section>
+    </main>
+
+    <!-- 選手名鑑モーダル -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>簡易 選手名鑑</h2>
+            <div id="racer-list" class="racer-list">
+                <div class="racer-card">
+                    <strong>4444 峰 竜太</strong>（A1・佐賀）<br>
+                    勝率: 8.50 | 1コース勝率: 85% | 特徴: ターン技術最高峰
+                </div>
+                <div class="racer-card">
+                    <strong>3415 毒島 誠</strong>（A1・群馬）<br>
+                    勝率: 7.95 | ナイター強者 | 特徴: 抜群のスタート精度
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1858 @@
+{
+  "date": "2026年08月19日",
+  "last_updated": "22:31:41",
+  "venues": [
+    {
+      "name": "桐生",
+      "races": [
+        {
+          "race_no": 1,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 2,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 3,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 4,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 5,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 6,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 7,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 8,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 9,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 10,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 11,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 12,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        }
+      ]
+    },
+    {
+      "name": "戸田",
+      "races": [
+        {
+          "race_no": 1,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 2,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 3,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 4,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 5,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 6,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 7,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 8,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 9,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 10,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 11,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 12,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        }
+      ]
+    },
+    {
+      "name": "江戸川",
+      "races": [
+        {
+          "race_no": 1,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 2,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 3,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 4,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 5,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 6,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 7,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 8,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 9,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 10,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 11,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 12,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        }
+      ]
+    },
+    {
+      "name": "平和島",
+      "races": [
+        {
+          "race_no": 1,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 2,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 3,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 4,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 5,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 6,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 7,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 8,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 9,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 10,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 11,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 12,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        }
+      ]
+    },
+    {
+      "name": "多摩川",
+      "races": [
+        {
+          "race_no": 1,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 2,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 3,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 4,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 5,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 6,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 7,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 8,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 9,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 10,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 11,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 12,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        }
+      ]
+    },
+    {
+      "name": "浜名湖",
+      "races": [
+        {
+          "race_no": 1,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 2,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 3,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 4,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 5,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 6,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 7,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 8,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 9,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 10,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 11,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 12,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        }
+      ]
+    },
+    {
+      "name": "蒲郡",
+      "races": [
+        {
+          "race_no": 1,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 2,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 3,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 4,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 5,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 6,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 7,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 8,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 9,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 10,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 11,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 12,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        }
+      ]
+    },
+    {
+      "name": "常滑",
+      "races": [
+        {
+          "race_no": 1,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 2,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 3,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 4,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 5,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 6,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 7,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 8,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 9,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 10,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 11,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 12,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        }
+      ]
+    },
+    {
+      "name": "津",
+      "races": [
+        {
+          "race_no": 1,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 2,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 3,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 4,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 5,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 6,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 7,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 8,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 9,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 10,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 11,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 12,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        }
+      ]
+    },
+    {
+      "name": "三国",
+      "races": [
+        {
+          "race_no": 1,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 2,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 3,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 4,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 5,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 6,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 7,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 8,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 9,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 10,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 11,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 12,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        }
+      ]
+    },
+    {
+      "name": "びわこ",
+      "races": [
+        {
+          "race_no": 1,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 2,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 3,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 4,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 5,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 6,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 7,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 8,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 9,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 10,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 11,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 12,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        }
+      ]
+    },
+    {
+      "name": "住之江",
+      "races": [
+        {
+          "race_no": 1,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 2,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 3,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 4,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 5,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 6,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 7,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 8,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 9,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 10,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 11,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 12,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        }
+      ]
+    },
+    {
+      "name": "尼崎",
+      "races": [
+        {
+          "race_no": 1,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 2,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 3,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 4,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 5,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 6,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 7,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 8,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 9,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 10,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 11,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 12,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        }
+      ]
+    },
+    {
+      "name": "鳴門",
+      "races": [
+        {
+          "race_no": 1,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 2,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 3,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 4,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 5,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 6,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 7,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 8,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 9,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 10,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 11,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 12,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        }
+      ]
+    },
+    {
+      "name": "丸亀",
+      "races": [
+        {
+          "race_no": 1,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 2,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 3,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 4,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 5,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 6,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 7,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 8,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 9,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 10,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 11,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 12,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        }
+      ]
+    },
+    {
+      "name": "児島",
+      "races": [
+        {
+          "race_no": 1,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 2,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 3,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 4,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 5,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 6,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 7,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 8,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 9,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 10,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 11,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 12,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        }
+      ]
+    },
+    {
+      "name": "宮島",
+      "races": [
+        {
+          "race_no": 1,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 2,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 3,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 4,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 5,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 6,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 7,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 8,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 9,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 10,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 11,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 12,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        }
+      ]
+    },
+    {
+      "name": "徳山",
+      "races": [
+        {
+          "race_no": 1,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 2,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 3,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 4,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 5,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 6,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 7,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 8,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 9,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 10,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 11,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 12,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        }
+      ]
+    },
+    {
+      "name": "下関",
+      "races": [
+        {
+          "race_no": 1,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 2,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 3,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 4,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 5,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 6,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 7,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 8,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 9,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 10,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 11,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 12,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        }
+      ]
+    },
+    {
+      "name": "若松",
+      "races": [
+        {
+          "race_no": 1,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 2,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 3,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 4,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 5,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 6,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 7,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 8,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 9,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 10,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 11,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 12,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        }
+      ]
+    },
+    {
+      "name": "芦屋",
+      "races": [
+        {
+          "race_no": 1,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 2,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 3,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 4,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 5,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 6,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 7,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 8,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 9,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 10,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 11,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 12,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        }
+      ]
+    },
+    {
+      "name": "福岡",
+      "races": [
+        {
+          "race_no": 1,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 2,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 3,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 4,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 5,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 6,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 7,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 8,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 9,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 10,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 11,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 12,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        }
+      ]
+    },
+    {
+      "name": "唐津",
+      "races": [
+        {
+          "race_no": 1,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 2,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 3,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 4,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 5,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 6,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 7,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 8,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 9,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 10,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 11,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 12,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        }
+      ]
+    },
+    {
+      "name": "大村",
+      "races": [
+        {
+          "race_no": 1,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 2,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 3,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 4,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 5,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 6,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 7,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 8,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 9,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 10,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 11,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        },
+        {
+          "race_no": 12,
+          "status": "受付中",
+          "payout": "-",
+          "prediction": "1-2-3"
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "hit_rate": "--%",
+    "recovery_rate": "--%"
+  }
+}
