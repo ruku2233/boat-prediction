@@ -3,170 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>無料競艇予想 & AIレース解析ナビ</title>
-    <meta name="google-site-verification" content="aRHsSFy30GZqS7DfkAXekFhY-dyu0X8Z7oJH_WaylL4" />
-    <meta name="description" content="本日開催の競艇予想・AI解析・リアルタイム結果一覧">
-
-    <style>
-        :root {
-            --bg-primary: #f4f6f9;
-            --bg-card: #ffffff;
-            --text-main: #1a1a1a;
-            --border-color: #e0e0e0;
-            --accent-blue: #0056b3;
-            
-            /* 艇番公式カラー */
-            --boat-1: #ffffff; --boat-1-text: #000000;
-            --boat-2: #222222; --boat-2-text: #ffffff;
-            --boat-3: #e53935; --boat-3-text: #ffffff;
-            --boat-4: #1e88e5; --boat-4-text: #ffffff;
-            --boat-5: #fdd835; --boat-5-text: #000000;
-            --boat-6: #4caf50; --boat-6-text: #ffffff;
-        }
-
-        [data-theme="dark"] {
-            --bg-primary: #121212;
-            --bg-card: #1e1e1e;
-            --text-main: #e0e0e0;
-            --border-color: #333333;
-        }
-
-        body {
-            background-color: var(--bg-primary);
-            color: var(--text-main);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            margin: 0; padding: 20px;
-        }
-
-        .header-bar {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 12px 20px; background: var(--bg-card); border-bottom: 3px solid var(--accent-blue);
-            border-radius: 8px; margin-bottom: 20px;
-        }
-
-        .btn-toggle {
-            padding: 6px 12px; background: var(--accent-blue); color: #fff;
-            border: none; border-radius: 4px; cursor: pointer;
-        }
-
-        .boat-badge {
-            display: inline-block; width: 22px; height: 22px; line-height: 22px;
-            text-align: center; font-weight: bold; border-radius: 4px; border: 1px solid #ccc;
-            font-size: 12px;
-        }
-        .b1 { background: var(--boat-1); color: var(--boat-1-text); }
-        .b2 { background: var(--boat-2); color: var(--boat-2-text); }
-        .b3 { background: var(--boat-3); color: var(--boat-3-text); }
-        .b4 { background: var(--boat-4); color: var(--boat-4-text); }
-        .b5 { background: var(--boat-5); color: var(--boat-5-text); }
-        .b6 { background: var(--boat-6); color: var(--boat-6-text); }
-
-        .race-card {
-            background: var(--bg-card); border-radius: 8px; border: 1px solid var(--border-color);
-            padding: 16px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-
-        .ai-box {
-            background: rgba(0, 86, 179, 0.08); border-left: 4px solid var(--accent-blue);
-            padding: 10px; margin: 10px 0; border-radius: 0 4px 4px 0; font-weight: bold;
-        }
-
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-        th, td { padding: 8px; text-align: left; border-bottom: 1px solid var(--border-color); font-size: 14px; }
-    </style>
+    <title>競艇予想 AIナビ</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <header class="header-bar">
-        <div>
-            <h1 style="margin:0; font-size:20px;">BOAT PREDICTION NAVI</h1>
-            <p style="margin:4px 0 0; font-size:12px; color:#666;">AI解析・全場リアルタイム予想</p>
-        </div>
-        <button class="btn-toggle" onclick="toggleDarkMode()">🌙 ダークモード切替</button>
+    <header>
+        <h1>BOAT PREDICTION NAVI</h1>
+        <p>日付: <span id="current-date">----/--/--</span></p>
     </header>
 
-    <main id="race-container">
-        <!-- JSでここにレースカードを読み込みます -->
-    </main>
+    <div class="container">
+        <div id="venue-tabs" class="venue-tabs"></div>
+        <main id="race-container"></main>
+    </div>
 
-    <script>
-        function toggleDarkMode() {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            document.documentElement.setAttribute('data-theme', newTheme);
-        }
-
-        function calculateAIPrediction(entries) {
-            const scored = entries.map(entry => {
-                let score = (entry.win_rate_1 * 0.4) + (entry.motor_2rate * 0.3) + ((7.0 - entry.exhibition) * 30);
-                if (entry.boat === 1) score += 15;
-                return { ...entry, aiScore: score };
-            });
-
-            scored.sort((a, b) => b.aiScore - a.aiScore);
-            return {
-                recommendations: `${scored[0].boat}-${scored[1].boat}-${scored[2].boat}, ${scored[0].boat}-${scored[1].boat}-${scored[3].boat}`
-            };
-        }
-
-        async function loadData() {
-            try {
-                const res = await fetch('data.json');
-                const data = await res.json();
-                renderRaces(data.venues);
-            } catch (err) {
-                document.getElementById('race-container').innerHTML = '<p>データ読み込み中...</p>';
-            }
-        }
-
-        function renderRaces(venues) {
-            const container = document.getElementById('race-container');
-            container.innerHTML = '';
-
-            venues.forEach(venue => {
-                venue.races.forEach(race => {
-                    const ai = calculateAIPrediction(race.entries);
-                    
-                    let html = `
-                        <div class="race-card">
-                            <h3 style="margin:0 0 10px 0;">${venue.name} ${race.race_no}R ${race.status === 'finished' ? '<span style="color:red; font-size:12px;">[確定]</span>' : ''}</h3>
-                            
-                            <div class="ai-box">
-                                🤖 AI本命予想買い目: ${ai.recommendations}
-                            </div>
-
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>枠</th><th>選手名</th><th>級別</th><th>1着率</th><th>展示</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    ${race.entries.map(e => `
-                                        <tr>
-                                            <td><span class="boat-badge b${e.boat}">${e.boat}</span></td>
-                                            <td>${e.name}</td>
-                                            <td>${e.class}</td>
-                                            <td>${e.win_rate_1}%</td>
-                                            <td>${e.exhibition}</td>
-                                        </tr>
-                                    `).join('')}
-                                </tbody>
-                            </table>
-
-                            ${race.result ? `
-                                <div style="margin-top: 10px; padding: 8px; background: rgba(76,175,80,0.1); border-radius: 4px; font-weight:bold;">
-                                    🏁 レース結果 (3連単): ${race.result.payout_3t}
-                                </div>
-                            ` : ''}
-                        </div>
-                    `;
-                    container.innerHTML += html;
-                });
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', loadData);
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
