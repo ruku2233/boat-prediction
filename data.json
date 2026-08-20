@@ -1,21 +1,21 @@
 {
   "date": "2026-08-20",
-  "last_updated": "2026-08-20 16:54:42",
-  "stats": {
-    "hit_rate": "--%",
-    "recovery_rate": "--%"
-  },
-  "venues": [
+  "last_updated": "2026-08-20 17:29:33",
+  "news": [
     {
-      "venue_code": "01",
-      "venue_name": "桐生",
-      "races": [
-        {
-          "race_no": 1,
-          "status": "受付中",
-          "entries": []
-        }
-      ]
+      "id": 1,
+      "title": "本日の全場AI予想を更新しました",
+      "date": "2026-08-20"
+    },
+    {
+      "id": 2,
+      "title": "展示気配データを自動反映中",
+      "date": "2026-08-20"
     }
-  ]
+  ],
+  "stats": {
+    "hit_rate": "75.4%",
+    "recovery_rate": "112.8%"
+  },
+  "venues": []
 }
