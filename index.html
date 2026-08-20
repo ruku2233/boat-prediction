@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ボートレース AI予想ポータル</title>
+  <style>
+    :root {
+      --primary-blue: #0066cc;
+      --header-gray: #cfd8dc;
+      --border-color: #b0bec5;
+      --bg-gray: #f4f6f8;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-gray);
+      margin: 0;
+      padding: 12px;
+      color: #333;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 16px;
+    }
+    /* 日付・メインナビ */
+    .date-header {
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 12px;
+      color: #2c3e50;
+    }
+    .main-nav {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .nav-btn {
+      flex: 1;
+      background-color: var(--primary-blue);
+      color: #fff;
+      border: none;
+      padding: 12px;
+      font-size: 0.95rem;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* 24会場グリッド */
+    .venue-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 600px) {
+      .venue-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    .venue-card {
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      overflow: hidden;
+      background: #fff;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.1s, box-shadow 0.1s;
+    }
+    .venue-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+    }
+    .venue-card.active {
+      border-color: var(--primary-blue);
+      box-shadow: 0 0 0 2px rgba(0,102,204,0.3);
+    }
+    .venue-head {
+      background-color: var(--header-gray);
+      padding: 6px 4px;
+      font-weight: bold;
+      font-size: 0.9rem;
+      color: #37474f;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+    }
+    .venue-body {
+      padding: 8px 4px;
+      font-size: 0.85rem;
+      color: #555;
+    }
+    .venue-body.is-active {
+      color: var(--primary-blue);
+      font-weight: bold;
+    }
+
+    /* アイコン凡例 */
+    .legend-box {
+      background: #f8f9fa;
+      border: 1px solid #e9ecef;
+      padding: 10px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 500px) {
+      .legend-box { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* レース詳細ビュー */
+    .race-detail-section {
+      display: none;
+      border-top: 2px solid var(--primary-blue);
+      padding-top: 16px;
+      margin-top: 16px;
+    }
+    .race-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 12px;
+    }
+    .race-tab {
+      flex: 1;
+      min-width: 40px;
+      padding: 8px 0;
+      background: #e9ecef;
+      border: 1px solid #ced4da;
+      text-align: center;
+      font-size: 0.85rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .race-tab.active {
+      background: var(--primary-blue);
+      color: #fff;
+      border-color: var(--primary-blue);
+    }
+
+    /* 予想＆出走表テーブル */
+    .prediction-box {
+      background: #e8f4fd;
+      border: 1px solid #b6e0fe;
+      padding: 12px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+    .entry-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+    .entry-table th, .entry-table td {
+      border: 1px solid #dee2e6;
+      padding: 6px 4px;
+      text-align: center;
+    }
+    .entry-table th { background: #f1f3f5; }
+    .boat-1 { background: #ffffff; color: #000; }
+    .boat-2 { background: #222222; color: #fff; }
+    .boat-3 { background: #dc3545; color: #fff; }
+    .boat-4 { background: #0d6efd; color: #fff; }
+    .boat-5 { background: #ffc107; color: #000; }
+    .boat-6 { background: #198754; color: #fff; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="date-header" id="currentDate">----年--月--日のレース</div>
+  
+  <div class="main-nav">
+    <button class="nav-btn">レース一覧 ❯</button>
+    <button class="nav-btn">払戻金一覧 ❯</button>
+  </div>
+
+  <!-- 24場グリッド -->
+  <div class="venue-grid" id="venueGrid"></div>
+
+  <!-- 凡例 -->
+  <div class="legend-box">
+    <div>⏰ モーニング</div>
+    <div>☀️ サマータイム</div>
+    <div>🌙 ナイター</div>
+    <div>⭐️ ミッドナイト</div>
+  </div>
+
+  <!-- レース詳細エリア（選択時に展開） -->
+  <div class="race-detail-section" id="raceDetail">
+    <h3 id="selectedVenueTitle" style="margin-top:0;">会場名</h3>
+    <div class="race-tabs" id="raceTabs"></div>
+    <div class="prediction-box" id="predictionBox">AI計算中...</div>
+    <table class="entry-table">
+      <thead>
+        <tr>
+          <th>艇</th>
+          <th>選手名</th>
+          <th>級</th>
+          <th>全国勝率</th>
+          <th>モーター</th>
+        </tr>
+      </thead>
+      <tbody id="entryTableBody"></tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+const VENUES = [
+  {code:"01", name:"桐生", icon:"🌙"}, {code:"02", name:"戸田", icon:""},
+  {code:"03", name:"江戸川", icon:""}, {code:"04", name:"平和島", icon:"☀️"},
+  {code:"05", name:"多摩川", icon:"☀️"}, {code:"06", name:"浜名湖", icon:""},
+  {code:"07", name:"蒲郡", icon:"🌙"}, {code:"08", name:"常滑", icon:""},
+  {code:"09", name:"津", icon:""}, {code:"10", name:"三国", icon:""},
+  {code:"11", name:"びわこ", icon:""}, {code:"12", name:"住之江", icon:"🌙"},
+  {code:"13", name:"尼崎", icon:""}, {code:"14", name:"鳴門", icon:"⏰"},
+  {code:"15", name:"丸亀", icon:"🌙"}, {code:"16", name:"児島", icon:""},
+  {code:"17", name:"宮島", icon:""}, {code:"18", name:"徳山", icon:"⏰"},
+  {code:"19", name:"下関", icon:"🌙"}, {code:"20", name:"若松", icon:"🌙"},
+  {code:"21", name:"芦屋", icon:"⏰"}, {code:"22", name:"福岡", icon:""},
+  {code:"23", name:"唐津", icon:"⏰"}, {code:"24", name:"大村", icon:"⭐️"}
+];
+
+let globalData = null;
+let currentVenue = null;
+
+async function loadData() {
+  try {
+    const res = await fetch('data.json?cache=' + Date.now());
+    globalData = await res.json();
+    document.getElementById('currentDate').innerText = `${globalData.date}のレース`;
+    renderVenues();
+  } catch (e) {
+    alert('データ読み込みエラー: python predict.py 実行後に data.json をアップロードしてください。');
+  }
+}
+
+function renderVenues() {
+  const grid = document.getElementById('venueGrid');
+  grid.innerHTML = '';
+
+  const activeVenueCodes = globalData.venues.map(v => v.venue_code);
+
+  VENUES.forEach(v => {
+    const isActive = activeVenueCodes.includes(v.code);
+    const card = document.createElement('div');
+    card.className = `venue-card ${isActive ? 'active' : ''}`;
+    card.innerHTML = `
+      <div class="venue-head">${v.name} ${v.icon}</div>
+      <div class="venue-body ${isActive ? 'is-active' : ''}">${isActive ? '開催中' : '-'}</div>
+    `;
+    if (isActive) {
+      card.onclick = () => selectVenue(v.code, v.name);
+    }
+    grid.appendChild(card);
+  });
+}
+
+function selectVenue(code, name) {
+  currentVenue = globalData.venues.find(v => v.venue_code === code);
+  if (!currentVenue) return;
+
+  document.getElementById('raceDetail').style.display = 'block';
+  document.getElementById('selectedVenueTitle').innerText = `${name} レース出走表・AI予想`;
+  
+  const raceTabs = document.getElementById('raceTabs');
+  raceTabs.innerHTML = '';
+
+  currentVenue.races.forEach((r, idx) => {
+    const tab = document.createElement('div');
+    tab.className = `race-tab ${idx === 0 ? 'active' : ''}`;
+    tab.innerText = `${r.race_no}R`;
+    tab.onclick = (e) => {
+      document.querySelectorAll('.race-tab').forEach(t => t.classList.remove('active'));
+      e.target.classList.add('active');
+      renderRaceDetail(r);
+    };
+    raceTabs.appendChild(tab);
+  });
+
+  if (currentVenue.races.length > 0) {
+    renderRaceDetail(currentVenue.races[0]);
+  }
+}
+
+function renderRaceDetail(race) {
+  const predBox = document.getElementById('predictionBox');
+  predBox.innerHTML = `<strong>🤖 AI推奨買い目 (${race.race_no}R):</strong> ${race.prediction || '計算中'}`;
+
+  const tbody = document.getElementById('entryTableBody');
+  tbody.innerHTML = '';
+
+  race.entries.forEach(e => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td class="boat-${e.boat}" style="font-weight:bold;">${e.boat}</td>
+      <td>${e.name}</td>
+      <td>${e.class}</td>
+      <td>${e.national_win_rate}%</td>
+      <td>${e.motor_2rate}%</td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+window.onload = loadData;
+</script>
+</body>
+</html>
