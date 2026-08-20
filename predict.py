@@ -1,36 +1,34 @@
 import json
 
-def calculate_ai_predictions():
-    with open("data.json", "r", encoding="utf-8") as f:
-        data = json.load(f)
-
-    for venue in data.get("venues", []):
-        for race in venue.get("races", []):
-            entries = race.get("entries", [])
-            if not entries: continue
-
-            scored = []
-            for entry in entries:
-                score = (entry.get("national_win_rate", 0) * 0.4) + \
-                        (entry.get("motor_2rate", 0) * 0.3) + \
-                        ((7.0 - entry.get("exhibition_time", 6.8)) * 30)
-                if entry.get("boat") == 1:
-                    score += 15.0
-                scored.append({"boat": entry["boat"], "score": score})
-
-            scored.sort(key=lambda x: x["score"], reverse=True)
-            
-            top1, top2, top3, top4 = scored[0]["boat"], scored[1]["boat"], scored[2]["boat"], scored[3]["boat"]
-            
-            race["prediction"] = {
-                "ai_score_order": [s["boat"] for s in scored],
-                "recommendations": [f"{top1}-{top2}-{top3}", f"{top1}-{top2}-{top4}", f"{top1}-{top3}-{top2}"]
-            }
-
-    with open("data.json", "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
-        
-    print("✅ AI予想買い目の再計算が完了しました。")
+def generate_prediction(entries):
+    if not entries or len(entries) < 6:
+        return "1-2-3"
+    
+    # 級別（A1優先）と全国勝率でランク付け
+    sorted_entries = sorted(
+        entries,
+        key=lambda x: (1 if x.get('class') == 'A1' else 0, x.get('national_win_rate', 0)),
+        reverse=True
+    )
+    
+    b1 = sorted_entries[0]['boat']
+    b2 = sorted_entries[1]['boat']
+    b3 = sorted_entries[2]['boat']
+    
+    return f"{b1}-{b2}-{b3}, {b1}-{b3}-{b2}"
 
 if __name__ == "__main__":
-    calculate_ai_predictions()
+    try:
+        with open("data.json", "r", encoding="utf-8") as f:
+            data = json.load(f)
+        
+        for venue in data.get("venues", []):
+            for race in venue.get("races", []):
+                race["prediction"] = generate_prediction(race.get("entries", []))
+        
+        with open("data.json", "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+            
+        print("✅ AI予想買い目の計算が正常に完了しました！")
+    except Exception as e:
+        print(f"❌ エラーが発生しました: {e}")
