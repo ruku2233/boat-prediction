@@ -3,51 +3,182 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ボートレース AI予想ポータル</title>
+  <title>ボートレース AI予想・出走表ポータル</title>
   <style>
-    :root { --primary: #0066cc; --bg: #f4f6f8; --border: #cfd8dc; }
-    body { font-family: sans-serif; background: var(--bg); margin: 0; padding: 12px; color: #333; }
-    .container { max-width: 800px; margin: 0 auto; background: #fff; padding: 16px; border-radius: 8px; }
-    .date-header { text-align: center; font-size: 1.2rem; font-weight: bold; margin-bottom: 12px; }
-    
-    /* 24場グリッド */
-    .venue-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-bottom: 16px; }
-    @media (max-width: 600px) { .venue-grid { grid-template-columns: repeat(2, 1fr); } }
-    .venue-card { border: 1px solid var(--border); border-radius: 4px; text-align: center; background: #f8f9fa; opacity: 0.5; }
-    .venue-card.active { opacity: 1; border-color: var(--primary); background: #fff; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.08); }
-    .venue-head { background: #eceff1; padding: 4px; font-weight: bold; font-size: 0.85rem; }
-    .venue-card.active .venue-head { background: var(--primary); color: #fff; }
-    .venue-body { padding: 6px; font-size: 0.75rem; }
+    :root {
+      --navy-main: #003366;
+      --blue-accent: #0066cc;
+      --bg-gray: #f0f2f5;
+      --border-gray: #ccc;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg-gray);
+      margin: 0;
+      padding: 10px;
+      color: #222;
+    }
+    /* ワイド幅（1200px）デザイン */
+    .wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #fff;
+      border: 1px solid var(--border-gray);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
 
-    /* レース表示部 */
-    .race-section { border-top: 2px solid var(--primary); padding-top: 12px; margin-top: 16px; display: none; }
-    .race-tabs { display: flex; gap: 4px; overflow-x: auto; padding-bottom: 8px; }
-    .race-tab { padding: 6px 12px; background: #e9ecef; border: 1px solid #ccc; border-radius: 4px; cursor: pointer; font-size: 0.85rem; white-space: nowrap; }
-    .race-tab.active { background: var(--primary); color: #fff; font-weight: bold; }
-    
-    .ai-box { background: #e8f4fd; border: 1px solid #b6e0fe; padding: 10px; border-radius: 4px; margin: 10px 0; font-size: 0.9rem; }
-    table { width: 100%; border-collapse: collapse; font-size: 0.8rem; text-align: center; }
-    th, td { border: 1px solid #ddd; padding: 6px 2px; }
-    th { background: #f1f3f5; }
-    .b-1 { background:#fff; } .b-2 { background:#333; color:#fff; } .b-3 { background:#e63946; color:#fff; }
-    .b-4 { background:#1d3557; color:#fff; } .b-5 { background:#ffb703; } .b-6 { background:#2a9d8f; color:#fff; }
+    /* ヘッダー・ニューステロップ */
+    .top-header {
+      background: var(--navy-main);
+      color: #fff;
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .top-header h1 { margin: 0; font-size: 1.2rem; }
+    .news-bar {
+      background: #fff3cd;
+      color: #856404;
+      padding: 8px 16px;
+      font-size: 0.85rem;
+      border-bottom: 1px solid #ffeeba;
+    }
+
+    /* カウントダウンバー */
+    .countdown-bar {
+      background: #e8f4fd;
+      color: var(--blue-accent);
+      padding: 8px 16px;
+      font-weight: bold;
+      font-size: 0.9rem;
+      border-bottom: 1px solid #b6e0fe;
+    }
+
+    /* 24場ナビゲーション */
+    .venue-selector {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 2px;
+      background: #ddd;
+      border-bottom: 2px solid var(--navy-main);
+    }
+    @media (max-width: 900px) {
+      .venue-selector { grid-template-columns: repeat(6, 1fr); }
+    }
+    .v-btn {
+      background: #fff;
+      border: none;
+      padding: 8px 2px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      cursor: pointer;
+      text-align: center;
+    }
+    .v-btn.active {
+      background: var(--blue-accent);
+      color: #fff;
+    }
+    .v-btn.is-today {
+      border-bottom: 3px solid #ff4757;
+    }
+
+    /* レースメインコンテンツ */
+    .main-content { padding: 16px; }
+    .venue-title-header {
+      background: #e9ecef;
+      padding: 10px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      border-left: 5px solid var(--navy-main);
+      margin-bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* 公式サイト風 1R〜12R 一覧テーブル */
+    .official-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      margin-bottom: 20px;
+    }
+    .official-table th, .official-table td {
+      border: 1px solid var(--border-gray);
+      padding: 8px 4px;
+      text-align: center;
+    }
+    .official-table th {
+      background: var(--navy-main);
+      color: #fff;
+    }
+    .race-no-cell { font-weight: bold; font-size: 1rem; color: var(--blue-accent); }
+    .status-finished { color: #888; font-weight: bold; }
+    .status-open { color: #d9534f; font-weight: bold; }
+
+    /* 艇別セル・枠色 */
+    .racers-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 2px;
+    }
+    .racer-card {
+      padding: 4px;
+      border-radius: 2px;
+      font-size: 0.75rem;
+      line-height: 1.2;
+    }
+    .b-1 { background: #ffffff; border: 1px solid #ccc; color: #000; }
+    .b-2 { background: #333333; color: #fff; }
+    .b-3 { background: #dc3545; color: #fff; }
+    .b-4 { background: #0d6efd; color: #fff; }
+    .b-5 { background: #ffc107; color: #000; }
+    .b-6 { background: #198754; color: #fff; }
+    .r-class { font-size: 0.68rem; opacity: 0.8; display: block; }
+
+    .ai-pred-tag {
+      background: #e3f2fd;
+      color: #0d47a1;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-weight: bold;
+      font-size: 0.8rem;
+    }
   </style>
 </head>
 <body>
 
-<div class="container">
-  <div class="date-header" id="dateHeader">データ読み込み中...</div>
-  <div class="venue-grid" id="venueGrid"></div>
+<div class="wrapper">
+  <div class="top-header">
+    <h1>🏁 BOAT RACE AI予想 & 出走表ポータル</h1>
+    <span id="dateDisplay">----/--/--</span>
+  </div>
 
-  <div class="race-section" id="raceSection">
-    <h3 id="venueTitle" style="margin:0 0 10px 0;"></h3>
-    <div class="race-tabs" id="raceTabs"></div>
-    <div class="ai-box" id="aiPrediction">AI予想解析中...</div>
-    <table>
+  <div class="news-bar" id="newsBar">📢 お知らせ: データの自動取得・AI買い目更新を行いました。</div>
+  <div class="countdown-bar" id="countdownBar">⏱ 次の締切まで: 計算中...</div>
+
+  <!-- 24場セレクター -->
+  <div class="venue-selector" id="venueSelector"></div>
+
+  <div class="main-content">
+    <div class="venue-title-header">
+      <span id="venueNameTitle">会場を選択してください</span>
+      <span id="venueStatusBadge" style="font-size:0.85rem; font-weight:normal;"></span>
+    </div>
+
+    <!-- 公式サイト風 縦並び1R〜12Rレース一覧表 -->
+    <table class="official-table">
       <thead>
-        <tr><th>艇</th><th>選手名</th><th>級別</th><th>全国勝率</th><th>モーター2連率</th></tr>
+        <tr>
+          <th style="width: 60px;">レース</th>
+          <th style="width: 90px;">締切予定</th>
+          <th>出場レーサー (1号艇〜6号艇)</th>
+          <th style="width: 140px;">AI推奨買い目</th>
+        </tr>
       </thead>
-      <tbody id="entryBody"></tbody>
+      <tbody id="raceListBody">
+        <tr><td colspan="4" style="padding:20px;">データ読込中...</td></tr>
+      </tbody>
     </table>
   </div>
 </div>
@@ -62,89 +193,107 @@ const ALL_VENUES = [
   {code:"21", name:"芦屋"}, {code:"22", name:"福岡"}, {code:"23", name:"唐津"}, {code:"24", name:"大村"}
 ];
 
-let db = null;
+let dbData = null;
 
-async function init() {
+async function loadData() {
   try {
     const res = await fetch('data.json?v=' + Date.now());
-    db = await res.json();
-    document.getElementById('dateHeader').innerText = `${db.date} 開催レース一覧`;
-    renderGrid();
+    dbData = await res.json();
+    document.getElementById('dateDisplay').innerText = dbData.date || '';
+    if(dbData.news && dbData.news.length > 0) {
+      document.getElementById('newsBar').innerText = `📢 ${dbData.news[0].title} (${dbData.news[0].date})`;
+    }
+    renderVenueSelector();
+    startCountdown();
   } catch(e) {
-    document.getElementById('dateHeader').innerText = 'data.jsonの読み込みに失敗しました';
+    document.getElementById('raceListBody').innerHTML = '<tr><td colspan="4">data.json の読み込みに失敗しました。ファイルが存在するか確認してください。</td></tr>';
   }
 }
 
-function renderGrid() {
-  const grid = document.getElementById('venueGrid');
-  grid.innerHTML = '';
+function renderVenueSelector() {
+  const container = document.getElementById('venueSelector');
+  container.innerHTML = '';
   
-  const activeCodes = (db.venues || []).map(v => v.venue_code);
+  const activeCodes = (dbData.venues || []).map(v => v.venue_code);
 
   ALL_VENUES.forEach(v => {
     const isActive = activeCodes.includes(v.code);
-    const card = document.createElement('div');
-    card.className = `venue-card ${isActive ? 'active' : ''}`;
-    card.innerHTML = `
-      <div class="venue-head">${v.name}</div>
-      <div class="venue-body">${isActive ? '開催中' : '非開催'}</div>
-    `;
-    if(isActive) {
-      card.onclick = () => showVenue(v.code, v.name);
-    }
-    grid.appendChild(card);
-  });
-}
-
-function showVenue(code, name) {
-  const venueData = db.venues.find(v => v.venue_code === code);
-  if(!venueData || !venueData.races.length) return;
-
-  document.getElementById('raceSection').style.display = 'block';
-  document.getElementById('venueTitle').innerText = `${name} 出走表・AI予想`;
-
-  const tabs = document.getElementById('raceTabs');
-  tabs.innerHTML = '';
-
-  venueData.races.forEach((r, idx) => {
     const btn = document.createElement('button');
-    btn.className = `race-tab ${idx === 0 ? 'active' : ''}`;
-    btn.innerText = `${r.race_no}R`;
-    btn.onclick = (e) => {
-      document.querySelectorAll('.race-tab').forEach(b => b.classList.remove('active'));
-      e.target.classList.add('active');
-      renderRace(r);
-    };
-    tabs.appendChild(btn);
+    btn.className = `v-btn ${isActive ? 'is-today' : ''}`;
+    btn.innerText = v.name;
+    btn.onclick = () => selectVenue(v.code, v.name, isActive);
+    container.appendChild(btn);
   });
 
-  renderRace(venueData.races[0]);
+  // 初期表示：本日開催中の最初の場を表示
+  if (dbData.venues && dbData.venues.length > 0) {
+    const firstActive = dbData.venues[0];
+    const match = ALL_VENUES.find(v => v.code === firstActive.venue_code);
+    selectVenue(firstActive.venue_code, match ? match.name : '会場', true);
+  }
 }
 
-function renderRace(race) {
-  document.getElementById('aiPrediction').innerHTML = `<strong>🤖 AI推奨買目 (${race.race_no}R):</strong> ${race.prediction || 'データ解析中'}`;
-  const tbody = document.getElementById('entryBody');
+function selectVenue(code, name, isActive) {
+  document.querySelectorAll('.v-btn').forEach(b => {
+    if(b.innerText === name) b.classList.add('active');
+    else b.classList.remove('active');
+  });
+
+  document.getElementById('venueNameTitle').innerText = `${name} 本日の全レース一覧`;
+  const tbody = document.getElementById('raceListBody');
   tbody.innerHTML = '';
 
-  if(!race.entries || race.entries.length === 0) {
-    tbody.innerHTML = '<tr><td colspan="5">出走表データが取得できていません</td></tr>';
+  if (!isActive) {
+    document.getElementById('venueStatusBadge').innerText = '本日の開催なし';
+    tbody.innerHTML = '<tr><td colspan="4" style="padding:30px; color:#888;">本日はレース開催がありません。</td></tr>';
     return;
   }
 
-  race.entries.forEach(e => {
+  const venueData = dbData.venues.find(v => v.venue_code === code);
+  if (!venueData || !venueData.races) return;
+
+  document.getElementById('venueStatusBadge').innerText = `全${venueData.races.length}レース掲載中`;
+
+  venueData.races.forEach(r => {
     const tr = document.createElement('tr');
+    
+    // 出場レーサー6艇分
+    let racersHtml = '<div class="racers-grid">';
+    if(r.entries && r.entries.length > 0) {
+      r.entries.forEach(e => {
+        racersHtml += `
+          <div class="racer-card b-${e.boat}">
+            <strong>${e.boat}. ${e.name}</strong>
+            <span class="r-class">${e.class} / ${e.national_win_rate}%</span>
+          </div>
+        `;
+      });
+    } else {
+      racersHtml += '<div>出走表データなし</div>';
+    }
+    racersHtml += '</div>';
+
     tr.innerHTML = `
-      <td class="b-${e.boat}" style="font-weight:bold;">${e.boat}</td>
-      <td>${e.name || '不明'}</td>
-      <td>${e.class || '-'}</td>
-      <td>${e.national_win_rate ? e.national_win_rate.toFixed(2) : '-'}</td>
-      <td>${e.motor_2rate ? e.motor_2rate.toFixed(1) + '%' : '-'}</td>
+      <td class="race-no-cell">${r.race_no}R</td>
+      <td>
+        <div>${r.deadline || '--:--'}</div>
+        <div class="status-finished">発売終了</div>
+      </td>
+      <td>${racersHtml}</td>
+      <td><span class="ai-pred-tag">${r.prediction || '分析中'}</span></td>
     `;
     tbody.appendChild(tr);
   });
 }
 
-window.onload = init;
+function startCountdown() {
+  setInterval(() => {
+    const now = new Date();
+    document.getElementById('countdownBar').innerText = `⏱ 現在時刻: ${now.toLocaleTimeString()} | 本日の全レース終了（夜間データ表示モード）`;
+  }, 1000);
+}
+
+window.onload = loadData;
 </script>
 </body>
 </html>
